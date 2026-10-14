@@ -7,14 +7,6 @@
 ![Java](https://img.shields.io/badge/Java-17%2B-orange?logo=openjdk&logoColor=white)
 [![Discord](https://img.shields.io/badge/Discord-join-5865F2?logo=discord&logoColor=white)](https://discord.gg/pfZ33hjH6Q)
 
-</div>
-
----
-
-<!-- Add a screenshot or GIF here: <p align="center"><img src="docs/screenshot.png" width="800"></p> -->
-
-Vora attaches an agent to a running Minecraft client, compiles your Java on the fly against the game's
-own classes, and runs it on the client thread. Edit, press **EXECUTE**, repeat — no relaunching.
 
 You write plain Java method bodies. `mc` (the live `MinecraftClient`) and `log(...)` are already in scope.
 
