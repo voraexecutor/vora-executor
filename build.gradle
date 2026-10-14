@@ -1,0 +1,78 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+version = '1.0'
+group = 'a'
+
+base {
+    archivesName = 'executor'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+
+    implementation 'org.ow2.asm:asm:9.7'
+    implementation 'org.ow2.asm:asm-commons:9.7'
+
+
+    implementation 'org.eclipse.jdt:ecj:3.46.100'
+}
+
+java {
+
+
+
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+    withSourcesJar()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 17
+}
+
+application {
+    mainClass = 'com.vora.executor.Main'
+}
+
+tasks.named('run') {
+    dependsOn tasks.named('jar')
+    systemProperty 'executor.agentJar',
+            layout.buildDirectory.file("libs/${base.archivesName.get()}-${project.version}.jar").get().asFile.absolutePath
+}
+
+
+
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    exclude 'module-info.class'
+    exclude 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA'
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+    manifest {
+        attributes(
+                'Main-Class'                   : 'com.vora.executor.Main',
+                'Agent-Class'                  : 'com.vora.agent.Boot',
+                'Premain-Class'                : 'com.vora.agent.Boot',
+                'Can-Retransform-Classes'      : 'true',
+                'Can-Redefine-Classes'         : 'true',
+                'Can-Set-Native-Method-Prefix' : 'false',
+                'Implementation-Title'         : 'Minecraft Executor',
+                'Implementation-Version'       : project.version
+        )
+    }
+
+    from("LICENSE") {
+        rename { "${it}_${base.archivesName.get()}" }
+    }
+}
