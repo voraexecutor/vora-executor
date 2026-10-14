@@ -22,22 +22,9 @@ You write plain Java method bodies. `mc` (the live `MinecraftClient`) and `log(.
 log("Hello " + mc.player.getName().getString());
 mc.player.sendMessage(net.minecraft.text.Text.literal("Hi from Vora!"), false);
 ```
-
-## Features
-
-- Runs Java against a live client via the JVM Attach API — no Forge/Fabric setup.
-- Two modes: `script.java` runs once, `mixin.java` runs every tick.
-- Instant iteration — recompile and re-run without restarting the game.
-- Writes readable Yarn names; Vora remaps them to the game's runtime namespace.
-- Cached mappings and in-memory compilation (Eclipse ECJ).
-- Themed desktop UI with live console, script history, and process picker.
-- CLI mode.
-- Safe: exceptions caught and printed, scripts watchdogged.
-
 ## Requirements
 
 - Java 17+
-- A running Minecraft client
 - Internet on first run (for mappings; cached afterwards)
 
 ## Writing scripts
