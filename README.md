@@ -1,6 +1,11 @@
 <div align="center">
-
+## Credits:
 # Vora
+
+> [!IMPORTANT]
+> **You may not modify, redistribute, or resell this project.**
+> Open a ticket in our [Discord](https://discord.gg/pfZ33hjH6Q) and we can talk about it.
+
 
 **A Java executor for Minecraft.**
 
@@ -52,8 +57,9 @@ only classes already present in the game.
 
 ## Credits:
 
-Opencode
+Opencode,
 Gemini
+
 
 ## Links
 
