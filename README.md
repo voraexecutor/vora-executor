@@ -2,7 +2,7 @@
 
 # Vora
 
-**A Java executor for Minecraft — run real Java in a live client, no restart.**
+**A Java executor for Minecraft.**
 
 ![Java](https://img.shields.io/badge/Java-17%2B-orange?logo=openjdk&logoColor=white)
 [![Discord](https://img.shields.io/badge/Discord-join-5865F2?logo=discord&logoColor=white)](https://discord.gg/pfZ33hjH6Q)
