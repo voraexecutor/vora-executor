@@ -13,48 +13,6 @@
 [![Discord](https://img.shields.io/badge/Discord-join-5865F2?logo=discord&logoColor=white)](https://discord.gg/pfZ33hjH6Q)
 
 
-You write plain Java method bodies. `mc` (the live `MinecraftClient`) and `log(...)` are already in scope.
-
-```java
-log("Hello " + mc.player.getName().getString());
-mc.player.sendMessage(net.minecraft.text.Text.literal("Hi from Vora!"), false);
-```
-## Requirements
-
-- Java 17+
-- Internet on first run (for mappings; cached afterwards)
-
-## Writing scripts
-
-You write only a method body; Vora wraps it. `mc` and `log(...)` are in scope, and `return;` stops early.
-
-**`script.java` — runs once:**
-
-```java
-log("Pos: " + mc.player.getPos());
-```
-
-**`mixin.java` — runs every tick (~20×/s); keep it cheap:**
-
-```java
-if (mc.player == null) return;
-if (mc.world.getTime() % 20 == 0) log("tick " + mc.world.getTime());
-```
-
-Rules: no class/main/package; `import`s allowed anywhere; runs on the client thread; **120s** timeout;
-only classes already present in the game.
-
-## The `mc` object
-
-| Expression | Meaning |
-| --- | --- |
-| `mc.player` / `mc.world` | Player / world — `null` in menus |
-| `mc.options` | Keybinds and settings |
-| `mc.execute(runnable)` | Run on the client thread (required for GUI) |
-| `mc.setScreen(screen)` | Open a screen |
-| `mc.interactionManager` | Attack, interact, place blocks |
-| `mc.world.getPlayers()` | Nearby players |
-
 ## Credits:
 
 Opencode,
