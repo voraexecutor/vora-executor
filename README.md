@@ -1,12 +1,12 @@
 <div align="center">
 ## Credits:
 # Vora
-# Join the discord for v2
 
 > [!IMPORTANT]
 > **You may not modify, redistribute, or resell this project.**
 > Open a ticket in our [Discord](https://discord.gg/pfZ33hjH6Q) and we can talk about it.
 
+# Join the discord for v2
 
 **A Java executor for Minecraft.**
 
