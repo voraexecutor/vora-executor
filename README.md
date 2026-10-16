@@ -1,6 +1,4 @@
 <div align="center">
-# Vora
-
 > [!IMPORTANT]
 > **You may not modify, redistribute, or resell this project.**
 > Open a ticket in our [Discord](https://discord.gg/pfZ33hjH6Q) and we can talk about it.
